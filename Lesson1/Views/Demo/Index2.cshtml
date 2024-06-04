@@ -1,0 +1,104 @@
+﻿@using Lesson1.Models
+@using System.Globalization
+
+@{
+    var product = new Product
+    {
+        Id = 1,
+        Name = "Name 1",
+        Photo = "phoebe2.jpg",
+        Creation = DateTime.Now,
+        Price = 4.6,
+        Quantity = 2
+    };
+
+    var products = new List<Product>
+    {
+        new Product
+        {
+            Id = 1,
+            Name = "Name 1",
+            Photo = "phoebe2.jpg",
+            Creation = DateTime.Now,
+            Price = 4.6,
+            Quantity = 2
+        },
+        new Product
+        {
+            Id = 2,
+            Name = "Name 2",
+            Photo = "phoebe1.png",
+            Creation = DateTime.ParseExact("20/10/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture),
+            Price = 2.3,
+            Quantity = 2
+        },
+        new Product
+        {
+            Id = 3,
+            Name = "Name 3",
+            Photo = "phoebe.png",
+            Creation = DateTime.ParseExact("20/11/2024", "dd/MM/yyyy", CultureInfo.InvariantCulture),
+            Price = 2.9,
+            Quantity = 3
+        },
+    };
+}
+
+<h3>Product Info</h3>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>@product.Id</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>@product.Name</td>
+    </tr>
+    <tr>
+        <td>Photo</td>
+        <td>
+            <img src="~/images/@product.Photo" width="100" height="100"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Creation</td>
+        <td>@product.Creation.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>@product.Price</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>@product.Quantity</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            @(product.Price * product.Quantity)
+        </td>
+    </tr>
+</table>
+
+<h3>Product List</h3>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Creation</th>
+        <th>Photo</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach(var p in products)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Creation.ToString("dd/MM/yyyy")</td>
+            <td><img src="~/images/@p.Photo" width="100" height="100" /></td>
+            <td>@p.Price</td>
+            <td>@p.Quantity</td>
+        </tr>
+    }
+</table>

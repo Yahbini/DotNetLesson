@@ -1,0 +1,17 @@
+﻿<h3>Student List</h3>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var p in @ViewBag.students)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>
+                @p.Name
+            </td>
+        </tr>
+    }
+</table>

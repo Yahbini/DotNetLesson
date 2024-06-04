@@ -1,0 +1,34 @@
+﻿Id: @ViewBag.Id
+<br />
+username: @ViewBag.UserName
+<br />
+status: @(ViewBag.Status?"Show":"Hide")
+<br />
+@if(ViewBag.Status)
+{
+    <span style="color: cornflowerblue">Show</span>
+} else
+{
+    <span style="color: palevioletred">Show</span>
+}
+<br />
+price: @ViewBag.Price
+<br />
+quantity: @ViewBag.Quantity
+<br />
+total: @(ViewBag.Price * ViewBag.Quantity)
+
+<br />
+Image:
+<br />
+<img src="~/images/@ViewBag.Photo" width="@ViewBag.Width" height="@ViewBag.Height" />
+<br />
+<br />
+<br />
+<ul>
+    @foreach(var photo  in ViewBag.Photos)
+    {
+        <li><img src="~/images/@photo" width="@ViewBag.Width" height="@ViewBag.Height" /></li>
+    }
+</ul>
+

@@ -1,0 +1,42 @@
+﻿<h3>Invoice Info</h3>
+Invoice Id: @ViewBag.invoice.Id <br />
+Invoice Name: @ViewBag.invoice.Name <br />
+Creation: @ViewBag.invoice.Creation <br />
+Payment:  @ViewBag.invoice.Payment <br />
+
+<h3>Customer Info</h3>
+Customer Id: @ViewBag.invoice.Customer.Id
+<br />
+Cus Name: @ViewBag.invoice.Customer.FullName
+<br />
+Cus Phone: @ViewBag.invoice.Customer.Phone
+<br />
+Cus Email: @ViewBag.invoice.Customer.Email
+
+<h3>Product List</h3>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Creation</th>
+        <th>Photo</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach (var p in ViewBag.invoice.Products)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>
+                <img src="~/images/@p.Photo" width="100" height="100" />
+            </td>
+            <td>@p.Creation.ToString("dd/MM/yyyy")</td>
+            <td>@p.Price</td>
+            <td>@p.Quantity</td>
+        </tr>
+    }
+    
+</table>
+
+<b>Total: @ViewBag.total</b>
