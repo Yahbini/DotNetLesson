@@ -1,0 +1,28 @@
+﻿<a asp-controller="students" asp-action="index">Back</a>
+<h3>Student Detail</h3>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Math</th>
+        
+        <th>Geography</th>
+        @if (ViewBag.BiogScore != null)
+        {
+            <th> Biography </th>
+        } 
+        <th>Average</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.Student.Id</td>
+        <td>@ViewBag.Student.Name</td>
+        <td>@ViewBag.MathScore</td>
+        <td>@ViewBag.GeoScore</td>
+        @if (ViewBag.BiogScore != null)
+        {
+            <td>@ViewBag.BiogScore</td>
+        }
+        <td>@ViewBag.Average</td>
+    </tr>
+</table>
+

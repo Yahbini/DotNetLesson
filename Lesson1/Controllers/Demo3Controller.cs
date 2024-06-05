@@ -22,18 +22,18 @@ public class Demo3Controller : Controller
         return View("Index2");
     }
 
-    [Route("index3/{id}")]
+    [Route("index3/{id?}")]
     public IActionResult Index3(int id)
     {
-        Debug.WriteLine("id: ", id);
+        Debug.WriteLine("id: " + id);
         return View("Index3");
     }
 
-    [Route("index4/{id}/{username}")]
-    public IActionResult Index4(String id, String username)
+    [Route("index4/{id?}/{username}")]
+    public IActionResult Index4(int id, String username)
     {
-        Debug.WriteLine("id:", id);
-        Debug.WriteLine("username:", username);
+        Debug.WriteLine("id:" + id);
+        Debug.WriteLine("username:" + username);
         return View("Index4");
     }
 

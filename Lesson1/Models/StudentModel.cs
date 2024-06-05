@@ -24,7 +24,7 @@ public class StudentModel
                     {
                         Id=2,
                         Name="Geography",
-                        Score=10
+                        Score=9.5
                     }
                 }
             },
@@ -38,7 +38,7 @@ public class StudentModel
                     {
                         Id=1,
                         Name="Math",
-                        Score=9
+                        Score=6.5
                     },
                     new Course()
                     {
@@ -58,7 +58,7 @@ public class StudentModel
                     {
                         Id=1,
                         Name="Math",
-                        Score=10
+                        Score=8.5
                     },
                     new Course()
                     {
@@ -80,5 +80,10 @@ public class StudentModel
     public List<Student> findAll()
     {
         return students;
+    }
+
+    public Student find(int id)
+    {
+        return students.SingleOrDefault(s => s.Id == id);
     }
 }

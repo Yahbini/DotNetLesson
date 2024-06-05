@@ -10,7 +10,8 @@
         <tr>
             <td>@p.Id</td>
             <td>
-                @p.Name
+                <a asp-controller="student" asp-action="details" asp-route-id="@p.Id">@p.Name</a>
+                
             </td>
         </tr>
     }
