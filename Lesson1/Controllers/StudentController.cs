@@ -8,7 +8,7 @@ public class StudentController : Controller
 
     [Route("")]
     [Route("index")]
-    [Route("~/")]
+
     public IActionResult Index()
     {
         var students = new StudentModel();

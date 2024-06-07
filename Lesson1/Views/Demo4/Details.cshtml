@@ -1,0 +1,36 @@
+﻿<a asp-controller="product" asp-action="index">Back</a>
+<h3>Product Details</h3>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>@ViewBag.product.Id</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>@ViewBag.product.Name</td>
+    </tr>
+    <tr>
+        <td>Photo</td>
+        <td>
+            <img src="~/images/@ViewBag.product.Photo" width="100" height="100" />
+        </td>
+    </tr>
+    <tr>
+        <td>Creation</td>
+        <td>@ViewBag.product.Creation.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>@ViewBag.product.Price</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>@ViewBag.product.Quantity</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            @(ViewBag.product.Price * ViewBag.product.Quantity)
+        </td>
+    </tr>
+</table>
