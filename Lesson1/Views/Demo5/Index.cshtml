@@ -1,6 +1,6 @@
 ﻿<h3>Search By Keyword</h3>
 <form method="get" asp-controller="demo5" asp-action="searchByKeyWord">
-    Keyword: <input type="text" name="keyword"/>
+    Keyword: <input type="text" name="keyword" />
     <br />
     <button type="submit">Search</button>
 </form>
@@ -13,3 +13,62 @@
     <br />
     <button type="submit">Search</button>
 </form>
+
+<h3>Login</h3>
+<form method="post" asp-controller="demo5" asp-action="login">
+    Username: <input type="text" name="username" />
+    <br />
+    Password: <input type="password" name="password" />
+    <br />
+    <button type="submit">Login</button>
+</form>
+
+<h3>Search By Dates</h3>
+<form method="post" asp-controller="demo5" asp-action="searchByDates">
+    From: <input type="text" name="from" id="from" />
+    <br />
+    To: <input type="text" name="to" id="to" />
+    <br />
+    <button type="submit">Search</button>
+
+</form>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script>
+    $(function () {
+        var dateFormat = "dd/mm/yy",
+            from = $("#from")
+                .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 1,
+                    dateFormat: dateFormat
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+            to = $("#to").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                dateFormat: dateFormat
+            })
+                .on("change", function () {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+            }
+
+            return date;
+        }
+    });
+</script>

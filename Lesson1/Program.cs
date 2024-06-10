@@ -9,6 +9,7 @@ builder.Services.AddScoped<DemoService, DemoServiceImpl>();
 builder.Services.AddScoped<CalculateService, CalculateServiceImpl>();
 builder.Services.AddScoped<RectangleService, RectangleServiceImplcs>();
 builder.Services.AddScoped<ProductService, ProductServiceImpl>();
+builder.Services.AddScoped<AccountService, AccountServiceImpl>();
 
 var app = builder.Build();
 

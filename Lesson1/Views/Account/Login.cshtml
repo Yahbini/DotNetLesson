@@ -1,0 +1,9 @@
+﻿<h3>Login</h3>
+@ViewBag.message
+<form method="post" asp-controller="account" asp-action="login">
+    Username: <input type="text" name="username" />
+    <br />
+    Password: <input type="password" name="password" />
+    <br />
+    <button type="submit">Login</button>
+</form>
