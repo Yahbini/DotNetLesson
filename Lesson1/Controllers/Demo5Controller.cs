@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Lesson1.Helper;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -6,12 +7,26 @@ namespace Lesson1.Controllers;
 [Route("demo5")]
 public class Demo5Controller : Controller
 {
+    private IWebHostEnvironment webHostEnvironment;
+    public Demo5Controller(IWebHostEnvironment _webHostEnvironment)
+    {
+        webHostEnvironment = _webHostEnvironment;
+    }
+
     [Route("")]
     [Route("index")]
     //[Route("~/")]
     public IActionResult Index()
     {
         return View();
+    }
+
+    [Route("index2")]
+    //[Route("~/")]
+    public IActionResult Index2()
+    {
+        Debug.WriteLine(Guid.NewGuid().ToString());
+        return View("Index2");
     }
 
     [HttpGet]
@@ -54,5 +69,76 @@ public class Demo5Controller : Controller
         Debug.WriteLine("startDate: " + startDate);
         Debug.WriteLine("endDate: " + endDate);
         return RedirectToAction("index");
+    }
+
+
+    [HttpPost]
+    [Route("update1")]
+    public IActionResult update1(List<string> emails)
+    {
+        Debug.WriteLine("emails: " + emails.Count);
+        foreach (string email in emails)
+        {
+            Debug.WriteLine(email);
+        }
+
+        return RedirectToAction("index");
+    }
+
+    [HttpPost]
+    [Route("update2")]
+    public IActionResult update2(List<int> quantities)
+    {
+        Debug.WriteLine("quantities: " + quantities.Count);
+        foreach (var quantity in quantities)
+        {
+            Debug.WriteLine(quantity);
+        }
+
+        return RedirectToAction("index");
+    }
+
+    [HttpPost]
+    [Route("upload")]
+    public IActionResult upload(IFormFile file)
+    {
+        Debug.WriteLine("File info");
+        Debug.WriteLine("File name: " + file.FileName);
+        Debug.WriteLine("File size(byte): " + file.Length);
+        Debug.WriteLine("File type: " + file.ContentType);
+
+        // Upload file
+        var fileName = FileHelper.generateFileName(file.FileName);
+        var path = Path.Combine(webHostEnvironment.WebRootPath, "images", fileName);
+
+        using (var fileStream = new FileStream(path, FileMode.Create))
+        {
+            file.CopyTo(fileStream);
+        }
+
+        return RedirectToAction("index2");
+    }
+
+    [HttpPost]
+    [Route("uploads")]
+    public IActionResult uploads(List<IFormFile> files)
+    {
+        Debug.WriteLine("files: " + files.Count);
+        foreach (var file in files)
+        {
+            Debug.WriteLine("File info");
+            Debug.WriteLine("File name: " + file.FileName);
+            Debug.WriteLine("File size(byte): " + file.Length);
+            Debug.WriteLine("File type: " + file.ContentType);
+            Debug.WriteLine("--------------------");
+            var fileName = FileHelper.generateFileName(file.FileName);
+            var path = Path.Combine(webHostEnvironment.WebRootPath, "images", fileName);
+
+            using (var fileStream = new FileStream(path, FileMode.Create))
+            {
+                file.CopyTo(fileStream);
+            }
+        }
+        return RedirectToAction("index2");
     }
 }

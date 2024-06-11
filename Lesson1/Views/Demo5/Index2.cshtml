@@ -1,0 +1,15 @@
+﻿<h3>Upload</h3>
+
+<form asp-action="upload" asp-controller="demo5" method="post" enctype="multipart/form-data">
+    File <input type="file" name="file" />
+    <br />
+    <button type="submit">Upload</button>
+</form>
+
+<h3>Uploads</h3>
+
+<form asp-action="uploads" asp-controller="demo5" method="post" enctype="multipart/form-data" >
+    File <input type="file" name="files" multiple />
+    <br />
+    <button type="submit">Upload</button>
+</form>

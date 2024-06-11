@@ -1,0 +1,55 @@
+﻿@model Lesson1.Models.Account
+
+<h3>Register</h3>
+<form method="post" asp-controller="account" asp-action="register">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="text" asp-for="Id"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" asp-for="Username" />
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="Password" />
+            </td>
+        </tr>
+        <tr>
+            <td>Fullname</td>
+            <td>
+                <input type="text" asp-for="Fullname" />
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <textarea cols="20" rows="5" asp-for="Description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Details</td>
+            <td>
+                <textarea cols="20" rows="5" asp-for="Details" id="editor"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button type="submit">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+<script src="~/js/ckeditor/samples/js/sample.js"></script>
+<script>
+    initSample();
+</script>
