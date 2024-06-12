@@ -1,7 +1,18 @@
 ﻿@model Lesson1.Models.Account
 
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#dob").datepicker({
+            dateFormat: 'mm/dd/yy'
+        });
+    });
+</script>
+
 <h3>Register</h3>
-<form method="post" asp-controller="account" asp-action="register">
+<form method="post" asp-controller="account" asp-action="register" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Id</td>
@@ -28,9 +39,65 @@
             </td>
         </tr>
         <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" asp-for="Gender" value="male"/> Male
+                <input type="radio" asp-for="Gender" value="female" /> Female
+            </td>
+        </tr>
+        <tr>
+            <td>Cert</td>
+            <td>
+                @foreach (var cert in ViewBag.certs)
+                {
+                    <input type="radio" asp-for="CertId" value="@cert.Id" /> @cert.Name
+                }               
+            </td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>
+                <select asp-for="RoleId">
+                    @foreach (var role in ViewBag.roles)
+                    {
+                        <option value="@role.Id">@role.Name</option>
+                    
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Street</td>
+            <td>
+                <input type="text" asp-for="Address.Street"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Ward</td>
+            <td>
+                <input type="text" asp-for="Address.Ward" />
+            </td>
+        </tr>
+        <tr>
             <td>Description</td>
             <td>
                 <textarea cols="20" rows="5" asp-for="Description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <input type="checkbox" asp-for="Status"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Languages</td>
+            <td>
+                @foreach(var language in ViewBag.languages)
+                {
+                    <input type="checkbox" value="@language.Id" name="languages"/> @language.Name
+                    <br />
+                }
             </td>
         </tr>
         <tr>
@@ -40,9 +107,22 @@
             </td>
         </tr>
         <tr>
+            <td>Date of birth</td>
+            <td>
+                <input type="text" asp-for="Dob" asp-format="{0:dd/MM/yyyy}" id="dob"/>
+            </td>
+        </tr>
+        <tr>
+            <td>File</td>
+            <td>
+                <input type="file" name="file"/>
+            </td>
+        </tr>
+        <tr>
             <td>&nbsp;</td>
             <td>
                 <button type="submit">Save</button>
+                <input type="hidden" asp-for="Email"/>
             </td>
         </tr>
     </table>

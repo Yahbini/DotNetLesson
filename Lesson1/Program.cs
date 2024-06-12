@@ -10,6 +10,10 @@ builder.Services.AddScoped<CalculateService, CalculateServiceImpl>();
 builder.Services.AddScoped<RectangleService, RectangleServiceImplcs>();
 builder.Services.AddScoped<ProductService, ProductServiceImpl>();
 builder.Services.AddScoped<AccountService, AccountServiceImpl>();
+builder.Services.AddScoped<CertService, CertServiceImpl>();
+builder.Services.AddScoped<LanguageService, LanguageServiceImpl>();
+builder.Services.AddScoped<RoleService, RoleServiceImpl>();
+
 
 var app = builder.Build();
 
