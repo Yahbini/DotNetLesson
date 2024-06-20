@@ -38,6 +38,7 @@ public class AccountController : Controller
     {
         if (accountService.Login(username, password))
         {
+            HttpContext.Session.SetString("username", username);
             return View("Welcome");
         }
         else
@@ -51,7 +52,7 @@ public class AccountController : Controller
     [Route("welcome")]
     public IActionResult Welcome(string username, string password)
     {
-
+        ViewBag.username = HttpContext.Session.GetString("username");
         return View("Welcome");
     }
 
@@ -59,7 +60,7 @@ public class AccountController : Controller
     [Route("logout")]
     public IActionResult Logout()
     {
-
+        HttpContext.Session.Remove("username");
         return RedirectToAction("login");
     }
 

@@ -35,6 +35,11 @@ public class AccountServiceImpl : AccountService
 
     }
 
+    public bool Exists(string username)
+    {
+        return accounts.Count(a => a.Username == username) > 0;
+    }
+
     public bool Login(string username, string password)
     {
         var account = accounts.SingleOrDefault(acc => acc.Username == username);

@@ -23,6 +23,7 @@ public class Demo4Controller : Controller
 
     [Route("")]
     [Route("index")]
+    [Route("~/")]
     public IActionResult Index()
     {
 
@@ -38,7 +39,6 @@ public class Demo4Controller : Controller
 
 
     [Route("index2")]
-    //[Route("~/")]
     public IActionResult Index2()
     {
 

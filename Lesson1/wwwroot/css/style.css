@@ -1,3 +1,7 @@
 ﻿img {
     border: 3px solid blue;
 }
+
+.error {
+    color: red
+}

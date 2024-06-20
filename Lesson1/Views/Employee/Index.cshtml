@@ -1,6 +1,34 @@
-﻿<h3>Employee</h3>
+﻿@model Lesson1.Models.Employee
+<link href="~/css/style.css" rel="stylesheet" />
 
-<form>
-    <input type="text"/>
+<h3>Employee</h3>
+
+<form method="post" asp-action="save" asp-controller="employee">
+    Id 
+    <br />
+    Username<input type="text" asp-for="Username"/>
+    <span asp-validation-for="Username" class="error"></span>
+
+    <br />
+
+    Password <input type="text" asp-for="Password" /> 
+    <span asp-validation-for="Password" class="error"></span>
+
+    <br />
+    Email <input type="text" asp-for="Email" />
+    <span asp-validation-for="Email" class="error"></span>
+
+    <br />
+
+    Website <input type="text" asp-for="Website" />
+    <span asp-validation-for="Website" class="error"></span>
+
+    <br />
+
+    Age <input type="text" asp-for="Age" />
+    <span asp-validation-for="Age" class="error"></span>
+
+    <br />
+    <button type="submit">Save</button>
 </form>
 

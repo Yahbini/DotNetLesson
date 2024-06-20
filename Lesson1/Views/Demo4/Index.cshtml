@@ -27,6 +27,7 @@ Result Perimter: @ViewBag.Perimter
         <th>Photo</th>
         <th>Price</th>
         <th>Quantity</th>
+        <th>Action</th>
     </tr>
     @foreach (var p in @ViewBag.products)
     {
@@ -43,6 +44,9 @@ Result Perimter: @ViewBag.Perimter
             </td>
             <td>@p.Price</td>
             <td>@p.Quantity</td>
+            <td>
+                <a asp-controller="cart" asp-action="buy" asp-route-id="@p.Id">Buy now!!!</a>
+            </td>
         </tr>
     }
 </table>
