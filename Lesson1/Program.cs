@@ -23,6 +23,11 @@ app.UseStaticFiles(); // cấu hình vào wwwroot. đặt dấu ~ vào wwwroot
 app.UseSession();
 
 app.MapControllerRoute(
+    name: "myareas",
+    pattern: "{area:exists}/{controller}/{action}"
+);
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action}");
 
