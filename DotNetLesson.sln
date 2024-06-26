@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson1", "Lesson1\Lesson1.csproj", "{AC508774-8AF1-4505-B215-A7CDE8A80259}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapShop", "BootstrapShop\BootstrapShop.csproj", "{9100A294-8EC6-41A6-877F-AAE1E040E66F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapShop", "BootstrapShop\BootstrapShop.csproj", "{9100A294-8EC6-41A6-877F-AAE1E040E66F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDB", "DotNetDB\DotNetDB.csproj", "{78D3BC75-0BBC-4A3F-B3D8-F2360A0A60A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9100A294-8EC6-41A6-877F-AAE1E040E66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9100A294-8EC6-41A6-877F-AAE1E040E66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9100A294-8EC6-41A6-877F-AAE1E040E66F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D3BC75-0BBC-4A3F-B3D8-F2360A0A60A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D3BC75-0BBC-4A3F-B3D8-F2360A0A60A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D3BC75-0BBC-4A3F-B3D8-F2360A0A60A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D3BC75-0BBC-4A3F-B3D8-F2360A0A60A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

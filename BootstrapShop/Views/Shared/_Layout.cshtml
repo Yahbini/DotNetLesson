@@ -22,7 +22,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/user/themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="~/user/themes/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css" id="enject"></style>
-
 </head>
 <body>
     <div id="header">
@@ -32,7 +31,7 @@
                 <div class="span6">
                     <div class="pull-right">
                         <span class="btn btn-mini">$155.00</span>
-                        <a href="product_summary.html"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes in your cart </span> </a>
+                        <a asp-controller="cart" asp-action="index"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes in your cart </span> </a>
                     </div>
                 </div>
             </div>
@@ -44,7 +43,7 @@
                     <span class="icon-bar"></span>
                 </a>
                 <div class="navbar-inner">
-                    <a class="brand" asp-action="index" asp-controller="home"><img src="~/user/themes/images/logo.png" alt="Bootsshop" /></a>
+                    <a class="brand" asp-controller="home" asp-action="index"><img src="~/user/themes/images/logo.png" alt="Bootsshop" /></a>
                     <form class="form-inline navbar-search" method="post" action="products.html">
                         <input id="srchFld" class="srchTxt" type="text" />
                         <select class="srchTxt">
@@ -162,12 +161,12 @@
             <div class="row">
                 <!-- Sidebar ================================================== -->
                 <div id="sidebar" class="span3">
-                    <div class="well well-small"><a id="myCart" href="product_summary.html"><img src="~/user/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
+                    <div class="well well-small"> <a id="myCart" asp-controller="cart" asp-action="index"><img src="~/user/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div>
                     <ul id="sideManu" class="nav nav-tabs nav-stacked">
                         <li class="subMenu open">
                             <a> ELECTRONICS [230]</a>
                             <ul>
-                                <li><a class="active" href="products.html"><i class="icon-chevron-right"></i>Cameras (100) </a></li>
+                                <li><a class="active" asp-controller="product" asp-action="category"><i class="icon-chevron-right"></i>Cameras (100) </a></li>
                                 <li><a href="products.html"><i class="icon-chevron-right"></i>Computers, Tablets & laptop (30)</a></li>
                                 <li><a href="products.html"><i class="icon-chevron-right"></i>Mobile Phone (80)</a></li>
                                 <li><a href="products.html"><i class="icon-chevron-right"></i>Sound & Vision (15)</a></li>
@@ -207,14 +206,14 @@
                         <img src="~/user/themes/images/products/panasonic.jpg" alt="Bootshop panasonoc New camera" />
                         <div class="caption">
                             <h5>Panasonic</h5>
-                            <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+                            <h4 style="text-align:center"><a class="btn" asp-action="detais" asp-controller="product"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
                         </div>
                     </div><br />
                     <div class="thumbnail">
                         <img src="~/user/themes/images/products/kindle.png" title="Bootshop New Kindel" alt="Bootshop Kindel">
                         <div class="caption">
                             <h5>Kindle</h5>
-                            <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+                            <h4 style="text-align:center"><a class="btn" asp-action="detais" asp-controller="product"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
                         </div>
                     </div><br />
                     <div class="thumbnail">

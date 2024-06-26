@@ -1,7 +1,6 @@
 ﻿@{
-        Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="well well-small">
     <h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
     <div class="row-fluid">
@@ -12,7 +11,7 @@
                         <li class="span3">
                             <div class="thumbnail">
                                 <i class="tag"></i>
-                                <a href="product_details.html"><img src="~/user/themes/images/products/b1.jpg" alt=""></a>
+                                <a asp-action="details" asp-controller="products"><img src="~/user/themes/images/products/b1.jpg" alt=""></a>
                                 <div class="caption">
                                     <h5>Product name</h5>
                                     <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -22,7 +21,7 @@
                         <li class="span3">
                             <div class="thumbnail">
                                 <i class="tag"></i>
-                                <a href="product_details.html"><img src="~/user/themes/images/products/b2.jpg" alt=""></a>
+                                <a asp-action="details" asp-controller="products"><img src="~/user/themes/images/products/b2.jpg" alt=""></a>
                                 <div class="caption">
                                     <h5>Product name</h5>
                                     <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -32,7 +31,7 @@
                         <li class="span3">
                             <div class="thumbnail">
                                 <i class="tag"></i>
-                                <a href="product_details.html"><img src="~/user/themes/images/products/b3.jpg" alt=""></a>
+                                <a asp-action="details" asp-controller="products"><img src="~/user/themes/images/products/b3.jpg" alt=""></a>
                                 <div class="caption">
                                     <h5>Product name</h5>
                                     <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
